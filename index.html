@@ -1,0 +1,1208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rajdip Sengupta</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Rajdip Sengupta, Senior Product Manager. Supply chain and warehouse platforms, enterprise AI agents and automation. Case studies with measured results.">
+<meta property="og:title" content="Rajdip Sengupta, Senior Product Manager">
+<meta property="og:description" content="Supply chain and warehouse platforms, enterprise AI agents and automation. Case studies with measured results.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one reading column; two coloured tracks (Supply Chain, Enterprise AI) plus Consulting; case studies = summary, mockups, build, results rail; flagships marked */
+:root{
+  --bg:#F5F7F9; --surface:#FFFFFF; --fg:#121A24; --muted:#556170; --line:#DCE2E9;
+  --accent:#1E5A86; --accent-soft:#E5EEF5;
+  --sc:#0F6B5C; --sc-soft:#E2F1EE;
+  --ai:#4B4FB0; --ai-soft:#ECECFA;
+  --kp:#6A5B3A; --kp-soft:#F2EEE4;
+  --good:#17704F; --flag:#8A5A00; --flag-soft:#FBF0D9;
+  --display:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  /* Blibli app theme for mockups (single theme by design) */
+  --b-nav:#2D3B55; --b-bg:#F2F4F8; --b-card:#FFFFFF; --b-blue:#3D8FDD; --b-blue-soft:#E3F1FC; --b-orange:#F5A03A;
+  --b-green:#7CC242; --b-text:#1F2933; --b-sub:#6B7685; --b-line:#E3E7EE; --b-red:#E25B4F; --b-disabled:#E1E4E9;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E131A; --surface:#151C26; --fg:#E6EBF1; --muted:#98A4B3; --line:#253141;
+    --accent:#7FB4DE; --accent-soft:#1A293A;
+    --sc:#5CC7B2; --sc-soft:#132C29; --ai:#A3A6F2; --ai-soft:#22243F; --kp:#D1BD8E; --kp-soft:#2A251A;
+    --good:#5DC69C; --flag:#F0C46A; --flag-soft:#33280F; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E131A; --surface:#151C26; --fg:#E6EBF1; --muted:#98A4B3; --line:#253141;
+  --accent:#7FB4DE; --accent-soft:#1A293A;
+  --sc:#5CC7B2; --sc-soft:#132C29; --ai:#A3A6F2; --ai-soft:#22243F; --kp:#D1BD8E; --kp-soft:#2A251A;
+  --good:#5DC69C; --flag:#F0C46A; --flag-soft:#33280F; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+img{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.skip{position:absolute;left:-999px;top:8px}
+.skip:focus{left:16px;background:var(--surface);padding:8px 12px;border-radius:6px;z-index:20}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-inline:calc(-1 * max(16px, env(safe-area-inset-left, 0px)))}
+nav .in{max-width:1080px;margin:0 auto;padding:14px max(16px, env(safe-area-inset-left, 0px));display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+nav .name{font-family:var(--display);font-weight:700;font-size:17px;color:var(--fg);text-decoration:none}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{color:var(--muted);text-decoration:none;font-size:14.5px}
+nav ul a:hover{color:var(--fg)}
+
+/* hero */
+.hero{padding-block:56px 36px;display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:40px;align-items:center}
+.hero-text{display:grid;gap:20px;max-width:800px;min-width:0}
+.hero-photo{margin:0}
+.hero-photo img{display:block;width:250px;height:250px;max-width:100%;object-fit:cover;border-radius:22px;border:1px solid var(--line);box-shadow:0 14px 30px -18px rgba(0,0,0,.45)}
+@media (max-width:760px){.hero{grid-template-columns:minmax(0,1fr);gap:20px;padding-top:36px}.hero-photo{order:-1}.hero-photo img{width:128px;height:128px;border-radius:50%}}
+.hero h1{font-size:clamp(32px,5vw,52px);font-weight:700;letter-spacing:-.02em}
+.hero h1 .sc{color:var(--sc)} .hero h1 .ai{color:var(--ai)}
+.lede{font-size:18.5px;color:var(--muted);max-width:68ch}
+.facts{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted);font-size:14.5px}
+.facts b{color:var(--fg);font-weight:600}
+.open{font-size:15px;padding:10px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--line);max-width:max-content}
+.open b{color:var(--good)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px var(--body);padding:10px 16px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--fg);text-decoration:none;cursor:pointer}
+.btn.primary{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+
+/* impact */
+.impact{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.impact div{background:var(--surface);padding:20px 22px;display:grid;gap:3px;min-width:0}
+.impact strong{font-family:var(--display);font-size:32px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.impact .t-sc strong{color:var(--sc)} .impact .t-ai strong{color:var(--ai)}
+.impact span{font-size:14.5px;color:var(--muted)}
+.impact em{font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+
+section{padding-block:72px 0;scroll-margin-top:70px}
+article,.mini{scroll-margin-top:80px}
+.sec-head{display:grid;gap:8px;margin-bottom:26px;max-width:760px}
+.sec-head h2{font-size:clamp(26px,3.4vw,34px);font-weight:700;letter-spacing:-.01em}
+.sec-head p{color:var(--muted)}
+
+/* badges */
+.flag{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--flag-soft);color:var(--flag);border:1px solid color-mix(in srgb,var(--flag) 35%,transparent);max-width:max-content}
+.flag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--flag)}
+.tag{font-family:var(--mono);font-size:12px;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.tag.sc{background:var(--sc-soft);color:var(--sc)} .tag.ai{background:var(--ai-soft);color:var(--ai)} .tag.kp{background:var(--kp-soft);color:var(--kp)}
+.status{font-family:var(--mono);font-size:11.5px;padding:3px 9px;border-radius:6px;border:1px dashed var(--line);color:var(--muted)}
+.status.live{border-style:solid;border-color:var(--good);color:var(--good)}
+
+/* flagship strip & tracks */
+.flagships{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.fcard{display:grid;gap:10px;align-content:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;text-decoration:none;color:var(--fg);min-width:0;transition:border-color .15s}
+.fcard:hover{border-color:var(--flag)}
+.fcard h3{font-size:19px}
+.fcard p{color:var(--muted);font-size:14.5px}
+.fcard strong{font-family:var(--display);font-size:26px}
+.fcard.sc strong{color:var(--sc)} .fcard.ai strong{color:var(--ai)}
+.tracks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+.track{display:grid;gap:10px;padding:24px;border-radius:14px;text-decoration:none;color:var(--fg);border:1px solid var(--line);min-width:0}
+.track.sc{background:var(--sc-soft);border-color:color-mix(in srgb,var(--sc) 30%,transparent)}
+.track.ai{background:var(--ai-soft);border-color:color-mix(in srgb,var(--ai) 30%,transparent)}
+.track h3{font-size:22px}
+.track.sc h3{color:var(--sc)} .track.ai h3{color:var(--ai)}
+.track p{font-size:15px}
+.track .go{font-weight:600;font-size:14.5px}
+.consult-link{margin-top:12px;font-size:15px;color:var(--muted)}
+.track-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.track-head .bar{width:36px;height:6px;border-radius:3px}
+.bar.sc{background:var(--sc)} .bar.ai{background:var(--ai)} .bar.kp{background:var(--kp)}
+
+/* case */
+.case{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:24px;overflow:hidden}
+.case.flagship{border-color:color-mix(in srgb,var(--flag) 45%,var(--line));box-shadow:0 8px 24px -16px color-mix(in srgb,var(--flag) 40%,transparent)}
+.case-top{padding:24px 28px 20px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.case-top h3{font-size:clamp(21px,2.6vw,26px);font-weight:700}
+.case-top p{color:var(--muted);max-width:74ch}
+.tldr{font-size:15px;color:var(--fg)!important;padding:10px 14px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0}
+.tldr b{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-right:6px}
+.scale{display:flex;flex-wrap:wrap;gap:8px}
+.scale span{font-size:13.5px;padding:4px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg)}
+.scale b{font-variant-numeric:tabular-nums}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.case-body{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+.case-main{padding:22px 28px 26px;display:grid;gap:22px;min-width:0}
+.block{display:grid;gap:8px;min-width:0}
+.block h4{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.block ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.rail{border-left:1px solid var(--line);background:color-mix(in srgb,var(--accent-soft) 40%,var(--surface));padding:22px 24px 26px;display:grid;gap:16px;align-content:start;min-width:0}
+.result{display:grid;gap:2px}
+.result strong{font-family:var(--display);font-size:30px;font-weight:700;color:var(--good);font-variant-numeric:tabular-nums;line-height:1.1}
+.result span{font-size:14px;color:var(--muted)}
+.result small{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.note{font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
+.guard{background:color-mix(in srgb,var(--good) 10%,var(--surface));border-radius:10px;padding:14px 16px;display:grid;gap:8px}
+.guard h4{color:var(--good)}
+.guard ul{margin:0;padding-left:18px;font-size:14px;display:grid;gap:4px}
+.team{display:flex;flex-wrap:wrap;gap:8px}
+.team span{font-size:13.5px;padding:5px 10px;border-radius:8px;background:var(--bg);border:1px solid var(--line)}
+.team b{font-variant-numeric:tabular-nums}
+.life{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;counter-reset:s}
+.life li{counter-increment:s;flex:1 1 120px;min-width:0;font-size:13.5px;padding:8px 10px;border-radius:8px;background:var(--bg);border:1px solid var(--line)}
+.life li::before{content:counter(s) ". ";font-family:var(--mono);color:var(--muted)}
+.models{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.models div{border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;gap:2px;background:var(--bg);min-width:0}
+.models b{font-size:14.5px}
+.models span{font-size:13px;color:var(--muted)}
+.models .hi{border-color:var(--sc)}
+.models .hi strong{font-family:var(--display);font-size:20px;color:var(--sc)}
+.wflow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.wflow div{border-radius:10px;padding:12px;background:var(--bg);border:1px solid var(--line);display:grid;gap:6px;align-content:start;min-width:0}
+.wflow b{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--sc)}
+.wflow ul{margin:0;padding-left:16px;font-size:13.5px;display:grid;gap:3px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0;counter-reset:s}
+.flow li{counter-increment:s;flex:1 1 140px;min-width:0;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px;background:var(--bg);display:grid;gap:2px}
+.flow li::before{content:"Step " counter(s);font-family:var(--mono);font-size:11px;color:var(--ai)}
+.branch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font-size:14px}
+.branch div{border-radius:10px;padding:10px 12px;border:1px solid var(--line)}
+.branch .hi{border-color:var(--good)}
+.branch b{display:block;font-family:var(--mono);font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+
+/* ======== MOCKUPS (Blibli app theme) ======== */
+.gallery{border-top:1px solid var(--line);background:color-mix(in srgb,var(--bg) 70%,var(--surface));padding:22px 28px 24px;display:grid;gap:12px}
+.gallery-row{display:flex;gap:14px;align-items:flex-start;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.gallery-row .arrow{align-self:center}
+.gallery-row.center{justify-content:flex-start}
+.cap{font-size:12.5px;color:var(--muted)}
+.arrow{flex:0 0 auto;color:var(--muted);font-size:22px;line-height:1}
+.phone{flex:0 0 232px;width:232px;border-radius:22px;background:#151B26;padding:7px;box-shadow:0 10px 24px -14px rgba(0,0,0,.45)}
+.phone .scr{border-radius:16px;overflow:hidden;background:var(--b-bg);font-family:Roboto,"Segoe UI",Arial,sans-serif;color:var(--b-text);font-size:11px;line-height:1.35;height:430px;display:flex;flex-direction:column}
+.sbar{background:var(--b-nav);color:#fff;display:flex;justify-content:space-between;padding:5px 10px 2px;font-size:10px}
+.sbar i{font-style:normal;letter-spacing:1px}
+.abar{background:var(--b-nav);color:#fff;display:flex;align-items:center;gap:10px;padding:8px 10px 11px}
+.ham{width:14px;height:10px;border-top:2px solid #fff;border-bottom:2px solid #fff;position:relative}
+.ham::after{content:"";position:absolute;left:0;right:0;top:2px;border-top:2px solid #fff}
+.abar b{font-size:13px;font-weight:600;flex:1}
+.avail{background:var(--b-green);color:#fff;border-radius:999px;font-size:8.5px;padding:1px 7px}
+.body{padding:9px;display:flex;flex-direction:column;gap:8px;flex:1;overflow:hidden}
+.info{display:flex;gap:6px;align-items:center;border:1px solid var(--b-blue);background:var(--b-blue-soft);border-radius:6px;padding:7px 8px;font-size:10.5px}
+.info::before{content:"i";display:grid;place-items:center;width:13px;height:13px;border-radius:50%;background:var(--b-blue);color:#fff;font-size:9px;font-weight:700;flex:0 0 auto}
+.info.warn{border-color:var(--b-orange);background:#FEF3E4}
+.info.warn::before{content:"!";background:var(--b-orange)}
+.mcard{background:var(--b-card);border-radius:6px;border-left:4px solid var(--b-blue);padding:8px 9px;display:grid;gap:6px}
+.mcard.or{border-left-color:var(--b-orange)}
+.mcard.gr{border-left-color:var(--b-green)}
+.mcard.rd{border-left-color:var(--b-red)}
+.mh{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:11.5px}
+.mrow{display:flex;justify-content:space-between;gap:6px;font-size:10.5px;padding-block:3px;border-bottom:1px solid var(--b-line)}
+.mrow:last-child{border-bottom:none}
+.mrow span:first-child{color:var(--b-sub)}
+.sub{font-size:9.5px;font-weight:600;color:var(--b-text)}
+.scanb{display:flex;align-items:center;justify-content:center;gap:5px;border:1px solid #C8CFD9;border-radius:4px;padding:5px;color:var(--b-blue);font-size:10.5px;background:#fff}
+.scanb::before{content:"";width:9px;height:9px;border:1.5px solid var(--b-blue);border-radius:1px}
+.ck{width:11px;height:11px;border-radius:50%;background:#A6ADB8;display:inline-grid;place-items:center;color:#fff;font-size:8px;flex:0 0 auto}
+.ck.on{background:var(--b-green)}
+.ck::after{content:"✓"}
+.box{width:11px;height:11px;border:1.5px solid #8A93A0;border-radius:2px;display:inline-block}
+.box.on{background:var(--b-green);border-color:var(--b-green)}
+.foot{padding:9px;background:var(--b-bg)}
+.pbtn{background:var(--b-blue);color:#fff;text-align:center;border-radius:4px;padding:8px;font-size:11px;font-weight:600}
+.pbtn.off{background:var(--b-disabled);color:#9AA2AE}
+.pbtn.gr{background:var(--b-green)}
+.big{font-size:20px;font-weight:700;color:var(--b-text)}
+.pillx{font-size:9px;padding:1px 6px;border-radius:999px;background:var(--b-blue-soft);color:var(--b-blue);font-weight:600}
+.pillx.or{background:#FEF0DC;color:#C77812}
+.pillx.rd{background:#FCE7E5;color:var(--b-red)}
+.pillx.gr{background:#ECF6E2;color:#4E8A1C}
+.loc{font-family:"IBM Plex Mono",monospace;font-size:15px;font-weight:600;text-align:center;padding:8px;border:1px dashed var(--b-blue);border-radius:6px;color:var(--b-blue);background:#fff}
+.done{display:grid;place-items:center;gap:6px;text-align:center;padding-top:20px}
+.done .tick{width:46px;height:46px;border-radius:50%;background:var(--b-green);color:#fff;display:grid;place-items:center;font-size:24px}
+.field{display:grid;gap:2px}
+.field label{font-size:9.5px;color:var(--b-sub)}
+.field div{border:1px solid #C8CFD9;border-radius:4px;padding:5px 7px;background:#fff;font-size:10.5px}
+/* web/tablet frame */
+.web{flex:0 0 auto;width:min(560px,100%);min-width:440px;border-radius:10px;overflow:hidden;background:var(--b-bg);border:1px solid #C9D0DA;box-shadow:0 10px 24px -16px rgba(0,0,0,.4);font-family:Roboto,"Segoe UI",Arial,sans-serif;color:var(--b-text);font-size:11.5px;line-height:1.4}
+.web.tablet{width:540px;border-radius:18px;border:8px solid #151B26}
+.wbar{background:var(--b-nav);color:#fff;display:flex;align-items:center;gap:10px;padding:9px 12px}
+.wbar b{font-size:12.5px;flex:1}
+.wbar .logo{font-weight:700;letter-spacing:.2px}
+.wbody{padding:12px;display:grid;gap:10px}
+.wtable{width:100%;border-collapse:collapse;background:#fff;border-radius:6px;overflow:hidden;font-size:11px}
+.wtable th{background:#EEF1F6;text-align:left;font-weight:600;padding:6px 8px;color:var(--b-sub);font-size:10px;text-transform:uppercase;letter-spacing:.03em}
+.wtable td{padding:6px 8px;border-top:1px solid var(--b-line);font-variant-numeric:tabular-nums}
+.act{display:flex;gap:4px}
+.mini-b{font-size:9.5px;border-radius:3px;padding:2px 6px;border:1px solid var(--b-blue);color:var(--b-blue);background:#fff;white-space:nowrap}
+.mini-b.f{background:var(--b-blue);color:#fff}
+.mini-b.rd{border-color:var(--b-red);color:var(--b-red)}
+.wgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{background:#fff;border-radius:6px;padding:10px;display:grid;gap:6px;border:1px solid var(--b-line)}
+.panel h5{margin:0;font-size:11px;color:var(--b-sub);text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+.hbar{display:grid;grid-template-columns:110px 1fr 28px;gap:6px;align-items:center;font-size:10.5px}
+.hbar i{height:7px;border-radius:4px;background:#E6EAF0;position:relative;display:block}
+.hbar i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--b-blue);border-radius:4px}
+.hbar span{text-align:right;font-variant-numeric:tabular-nums}
+.agent{border-left:4px solid #7B61D8;background:#fff;border-radius:6px;padding:10px;display:grid;gap:7px}
+.agent .who{display:flex;align-items:center;gap:6px;font-weight:600;font-size:11px}
+.agent .who::before{content:"AI";display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#7B61D8;color:#fff;font-size:8.5px}
+.conf{height:6px;border-radius:3px;background:#E6EAF0;position:relative}
+.conf::after{content:"";position:absolute;inset:0 auto 0 0;width:86%;background:var(--b-green);border-radius:3px}
+
+/* dates, decisions, ramp, quotes */
+.when-chip{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.decide{display:grid;gap:8px}
+.decide div{border:1px solid var(--line);border-left:3px solid var(--flag);border-radius:0 10px 10px 0;padding:10px 12px;font-size:14.5px;background:var(--bg)}
+.decide b{display:block;font-size:14.5px}
+.decide span{color:var(--muted);font-size:14px}
+.ramp{display:grid;gap:6px}
+.ramp div{display:grid;grid-template-columns:96px minmax(0,1fr) 54px;gap:10px;align-items:center;font-size:13.5px}
+.ramp i{display:block;height:12px;border-radius:6px;background:var(--line);position:relative}
+.ramp i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);border-radius:6px;background:var(--c,var(--sc))}
+.ramp span{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.adopt{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.adopt div{border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--bg);display:grid;gap:2px;min-width:0}
+.adopt strong{font-family:var(--display);font-size:20px;color:var(--sc)}
+.adopt span{font-size:12.5px;color:var(--muted)}
+.adopt .low strong{color:var(--flag)}
+.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.quote{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;display:grid;gap:12px;margin:0}
+.quote blockquote{margin:0;font-size:16.5px;line-height:1.55}
+.quote figcaption{font-size:14px;color:var(--muted)}
+.quote figcaption b{color:var(--fg);display:block}
+@media (max-width:640px){.quotes,.adopt{grid-template-columns:repeat(2,minmax(0,1fr))}.quotes{grid-template-columns:minmax(0,1fr)}}
+
+/* lead */
+.teams-viz{display:grid;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.trow{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr) 40px;gap:12px;align-items:center;font-size:14.5px}
+.trow i{display:block;height:10px;border-radius:5px;background:var(--line);position:relative}
+.trow i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);border-radius:5px;background:var(--c)}
+.trow span{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.trow small{display:block;font-size:12.5px;color:var(--muted)}
+.lead{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
+.lead div{border-top:2px solid var(--fg);padding-top:12px;display:grid;gap:6px}
+.lead h3{font-size:17px}
+.lead p{color:var(--muted);font-size:14.5px}
+.minis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.mini{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:grid;gap:8px;align-content:start;min-width:0}
+.mini h3{font-size:18px}
+.mini p{font-size:14.5px;color:var(--muted)}
+.roles{display:grid;border-top:1px solid var(--line)}
+.role{display:grid;grid-template-columns:190px minmax(0,1fr);gap:24px;padding-block:20px;border-bottom:1px solid var(--line)}
+.role .when{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.role h3{font-size:18.5px}
+.role .org{color:var(--muted);font-size:15px;margin-top:2px}
+.role p.sum{margin-top:8px;font-size:15px}
+.edu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.edu div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:4px}
+.edu b{font-family:var(--display);font-size:16px}
+.edu span{color:var(--muted);font-size:14px}
+.contact{margin-block:72px 48px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:30px 28px;display:grid;gap:14px}
+.contact h2{font-size:clamp(24px,3vw,30px)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.email{font-family:var(--mono);font-size:15px;user-select:all;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);overflow-wrap:anywhere}
+#copy-status{font-size:14px;color:var(--good);min-height:1.4em}
+footer{padding-block:0 36px;color:var(--muted);font-size:13px}
+
+@media (max-width:860px){
+  .case-body{grid-template-columns:minmax(0,1fr)}
+  .rail{border-left:none;border-top:1px solid var(--line)}
+  .flagships,.lead,.edu{grid-template-columns:minmax(0,1fr)}
+  .wflow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .role{grid-template-columns:minmax(0,1fr);gap:4px}
+}
+@media (max-width:640px){
+  .impact{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .impact strong{font-size:26px}
+  .tracks,.minis,.models,.branch,.wflow{grid-template-columns:minmax(0,1fr)}
+  .case-top,.case-main,.rail,.gallery{padding-left:18px;padding-right:18px}
+  .trow{grid-template-columns:minmax(0,1fr) 40px}
+  .trow i{grid-column:1 / -1;grid-row:2}
+  nav ul{gap:12px}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+/* ===== Portfolio assistant (no external calls) ===== */
+[hidden]{display:none!important}
+footer{padding-bottom:96px}
+.chat-fab{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:30;display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px 0 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);font:600 14px var(--body);cursor:pointer;box-shadow:0 6px 18px -8px rgba(0,0,0,.35);transition:transform .15s ease,box-shadow .15s ease}
+.chat-fab:hover{transform:translateY(-1px);box-shadow:0 10px 24px -10px rgba(0,0,0,.4)}
+.chat-fab svg{width:20px;height:20px;flex:0 0 auto;color:var(--accent)}
+.chat-fab .lbl{white-space:nowrap}
+.chat-fab.compact{padding:0;width:44px;justify-content:center}
+.chat-fab.compact .lbl{display:none}
+.chat-scrim{position:fixed;inset:0;z-index:30;background:rgba(10,14,20,.35)}
+.chat{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:31;width:min(360px,calc(100vw - 40px));height:min(500px,calc(100vh - 120px));display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 50px -18px rgba(0,0,0,.45);overflow:hidden;transform-origin:bottom right}
+@media (prefers-reduced-motion:no-preference){.chat:not([hidden]){animation:chatIn .16s ease-out}}
+@keyframes chatIn{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+.chat-head{display:flex;align-items:center;gap:10px;padding:10px 8px 10px 14px;border-bottom:1px solid var(--line)}
+.chat-head img{width:28px;height:28px;border-radius:50%;object-fit:cover}
+.chat-head div{flex:1;min-width:0;line-height:1.25}
+.chat-head b{display:block;font-family:var(--display);font-size:14.5px}
+.chat-head span{font-size:12px;color:var(--muted)}
+.chat-x{display:grid;place-items:center;width:36px;height:36px;border:none;background:transparent;color:var(--muted);cursor:pointer;border-radius:8px}
+.chat-x:hover{background:var(--bg);color:var(--fg)}
+.chat-x svg{width:18px;height:18px}
+.chat-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;overscroll-behavior:contain}
+.msg{max-width:90%;padding:9px 12px;border-radius:14px;font-size:14px;line-height:1.5;overflow-wrap:anywhere}
+.msg.bot{background:var(--bg);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.me{background:var(--accent);color:var(--bg);border-bottom-right-radius:4px;align-self:flex-end}
+.msg.bot a{font-weight:600}
+.msg ul{margin:6px 0 0;padding-left:18px}
+.typing{display:inline-flex;gap:4px;padding:12px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);opacity:.5}
+@media (prefers-reduced-motion:no-preference){.typing i{animation:blink 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}}
+@keyframes blink{50%{opacity:1}}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:8px 12px;border-top:1px solid var(--line);scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;font:500 12.5px var(--body);padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;white-space:nowrap}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chat-form{display:flex;align-items:center;gap:6px;padding:8px 8px 8px 12px;border-top:1px solid var(--line)}
+.chat-form input{flex:1;min-width:0;font:14.5px var(--body);padding:9px 2px;border:none;background:transparent;color:var(--fg);outline:none}
+.chat-form button{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:none;background:var(--accent);color:var(--bg);cursor:pointer;flex:0 0 auto}
+.chat-form button:disabled{background:var(--line);color:var(--muted);cursor:default}
+.chat-form button svg{width:16px;height:16px}
+.chat-form:focus-within{box-shadow:inset 0 2px 0 var(--accent)}
+@media (max-width:600px){
+  .chat-fab .lbl{display:none}
+  .chat-fab{padding:0;width:48px;height:48px;justify-content:center}
+  .chat{right:0;left:0;bottom:0;width:100%;height:min(72vh,560px);border-radius:18px 18px 0 0;border-bottom:none;padding-bottom:env(safe-area-inset-bottom,0px);transform-origin:bottom center}
+  .chat-head{padding-top:14px;position:relative}
+  .chat-head::before{content:"";position:absolute;top:6px;left:50%;width:36px;height:4px;margin-left:-18px;border-radius:2px;background:var(--line)}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav aria-label="Primary"><div class="in">
+  <a class="name" href="#top">Rajdip Sengupta</a>
+  <ul>
+    <li><a href="#supply-chain">Supply Chain</a></li>
+    <li><a href="#ai">Enterprise AI</a></li>
+    <li><a href="#consulting">Consulting</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<div class="wrap">
+<main id="main">
+  <header class="hero" id="top">
+    <div class="hero-text">
+    <p class="label">Senior Product Manager · Bengaluru, India</p>
+    <h1>I build <span class="sc">warehouse and supply chain platforms</span> and the <span class="ai">AI agents</span> that keep them running.</h1>
+    <p class="lede">10+ years across product management, technology consulting and software engineering. At Blibli, a leading Indonesian eCommerce and omnichannel retailer, and at Flipkart, I have led WMS mobility, grocery and fresh, forecasting and fulfillment products, and agentic AI for incident management.</p>
+    <div class="facts">
+      <span><b>Now</b> Lead PM, Blibli (Bengaluru)</span>
+      <span><b>Before</b> Flipkart · KPMG · IBM</span>
+      <span><b>Leads</b> 4 direct reports · program teams of up to 15</span>
+      <span><b>Education</b> MBA, IIM Ranchi · B.Tech CSE</span>
+      <span><b>Certified</b> AI Strategy and Governance, UPenn (2026)</span>
+    </div>
+    <p class="open"><b>Open to</b> Senior and Lead Product Manager roles in supply chain and enterprise AI.</p>
+    <div class="actions">
+      <a class="btn primary" href="Rajdip_Sengupta_Resume_Supply_Chain.pdf" target="_blank" rel="noopener">Supply chain resume (PDF)</a>
+      <a class="btn" href="Rajdip_Sengupta_Resume_AI_Automation.pdf" target="_blank" rel="noopener">AI and automation resume (PDF)</a>
+      <a class="btn" href="https://www.linkedin.com/in/rajdip-sengupta-a1664182" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+      </div>
+    <figure class="hero-photo"><img src="data:image/jpeg;base64,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" alt="Rajdip Sengupta" width="480" height="480"></figure>
+  </header>
+
+  <div class="impact" role="list" aria-label="Selected impact">
+    <div class="t-sc" role="listitem"><strong>−42%</strong><span>dock-to-stock time per pallet in dark stores (60 → 34 min), same headcount</span><em>WMS mobility · 2026</em></div>
+    <div class="t-sc" role="listitem"><strong>USD 4M+</strong><span>annual contract value; grocery client live since April 2026</span><em>Grocery and fresh WMS · 2026</em></div>
+    <div class="t-ai" role="listitem"><strong>−44%</strong><span>incident SLA turnaround, with 54% of incidents resolved by the agent</span><em>AI incident agent · 2026</em></div>
+    <div class="t-sc" role="listitem"><strong>5×</strong><span>fulfillment capacity: 2,000 → 10,000 order items an hour</span><em>Conveyor integration · 2025</em></div>
+    <div class="t-sc" role="listitem"><strong>87% → 96%</strong><span>on-time handover to logistics for grocery orders</span><em>Grocery and fresh WMS · 2026</em></div>
+    <div class="t-sc" role="listitem"><strong>93.6% → 97.2%</strong><span>outbound SLA across 8 warehouses and 20,000+ SKUs</span><em>ML replenishment · 2026</em></div>
+  </div>
+
+  <section aria-labelledby="flag-h">
+    <div class="sec-head">
+      <span class="flag">Flagship</span>
+      <h2 id="flag-h">Three projects to read first</h2>
+      <p>Each one I led end to end, from roadmap to rollout, with the largest teams and the biggest measured results.</p>
+    </div>
+    <div class="flagships">
+      <a class="fcard sc" href="#mobility"><span class="tag sc">Supply Chain</span><h3>WMS mobility for 3 business models</h3><strong>−42%</strong><p>dock-to-stock time in dark stores; ~300 users, 96% of workflows on mobile. Team of 9.</p></a>
+      <a class="fcard sc" href="#grocery"><span class="tag sc">Supply Chain</span><h3>Grocery and fresh in the WMS</h3><strong>USD 4M+</strong><p>annual contract; on-time handover 87% → 96%. Live since April 2026. Team of 15.</p></a>
+      <a class="fcard ai" href="#incident-agent"><span class="tag ai">Enterprise AI</span><h3>AI incident agent and self-help portal</h3><strong>−44%</strong><p>incident SLA turnaround; 54% of incidents resolved by the agent.</p></a>
+    </div>
+    <div class="tracks" aria-label="Choose a track">
+      <a class="track sc" href="#supply-chain"><p class="label">Track 1</p><h3>Supply Chain and Operations</h3><p>Warehouse management, mobility apps, dark stores, grocery and fresh, demand forecasting, replenishment, labor planning and fulfillment automation.</p><span class="go">4 case studies, omnichannel enablement and POS →</span></a>
+      <a class="track ai" href="#ai"><p class="label">Track 2</p><h3>Enterprise AI and Automation</h3><p>Agentic AI for incident management, human-in-the-loop guardrails, experimentation, AI evaluation and AI-native ways of working.</p><span class="go">2 case studies and 4 projects →</span></a>
+    </div>
+    <p class="consult-link">Also: <a href="#consulting">technology risk and compliance consulting at KPMG</a>.</p>
+  </section>
+
+  <!-- ================= SUPPLY CHAIN ================= -->
+  <section id="supply-chain" aria-labelledby="sc-h">
+    <div class="sec-head">
+      <div class="track-head"><span class="bar sc"></span><span class="label">Track 1</span></div>
+      <h2 id="sc-h">Supply Chain and Operations</h2>
+      <p>Platforms that move stock faster and more accurately through dark stores, fulfillment centers and omnichannel operations. App screens below are mockups in the Blibli app style with sample data; the live app runs in Bahasa Indonesia.</p>
+    </div>
+
+    <!-- MOBILITY -->
+    <article class="case flagship" id="mobility" aria-labelledby="c-mob">
+      <div class="case-top">
+        <div class="meta"><span class="flag">Flagship</span><span class="tag sc">Blibli</span><span class="tag sc">Warehouse mobility</span><span class="status live">Live</span><span class="when-chip">Aug 2025 – launched Jan 2026</span></div>
+        <h3 id="c-mob">WMS mobility solution across dark stores, marketplace and omnichannel fulfillment</h3>
+        <p class="tldr"><b>In short</b>Led a 9-person team to move inbound, stock control and outbound onto one mobile app across three business models. In dark stores, dock-to-stock time per pallet fell 42% and outbound SLA improved 12%, with the same headcount.</p>
+        <div class="scale"><span><b>3</b> business models</span><span><b>16</b> dark stores</span><span><b>~300</b> users across 3 shifts</span><span><b>~100</b> devices</span><span><b>96%</b> of operational workflows on mobile</span></div>
+      </div>
+      <div class="case-body">
+        <div class="case-main">
+          <div class="block">
+            <h4>Three business models, one app</h4>
+            <div class="models">
+              <div class="hi"><b>Dark stores</b><strong>−42%</strong><span>dock-to-stock time; outbound SLA +12% (picking, packing, handover)</span></div>
+              <div class="hi"><b>Marketplace operations</b><strong>−32%</strong><span>dock-to-stock time; outbound SLA +4%</span></div>
+              <div class="hi"><b>Omnichannel fulfillment</b><strong>−32%</strong><span>dock-to-stock time; outbound SLA +4%</span></div>
+            </div>
+          </div>
+          <div class="block">
+            <h4>Dark stores: dock-to-stock minutes per pallet after go-live (12 sites, April 2026)</h4>
+            <div class="ramp" role="list">
+              <div role="listitem"><b>Before</b><i style="--w:100%;--c:var(--muted)"></i><span>60 min</span></div>
+              <div role="listitem"><b>Month 1</b><i style="--w:80%"></i><span>48 min</span></div>
+              <div role="listitem"><b>Month 2</b><i style="--w:71.7%"></i><span>43 min</span></div>
+              <div role="listitem"><b>Month 3 on</b><i style="--w:56.7%"></i><span>34 min</span></div>
+            </div>
+          </div>
+          <div class="block">
+            <h4>Marketplace adoption by workflow</h4>
+            <div class="adopt">
+              <div><strong>82%</strong><span>Inbound</span></div>
+              <div><strong>95%</strong><span>Picking</span></div>
+              <div class="low"><strong>34%</strong><span>Stock control</span></div>
+              <div class="low"><strong>34%</strong><span>QC</span></div>
+            </div>
+            <p style="font-size:14px;color:var(--muted)">Stock control and QC adoption is the next focus. Across operational workflows overall, 96% now run on mobile, with the web app kept for contingencies.</p>
+          </div>
+          <div class="block">
+            <h4>Key decisions</h4>
+            <div class="decide">
+              <div><b>Dark stores first.</b><span>Short dock-to-stock cycles gave fast feedback and the biggest efficiency upside, so dark stores went first, followed by marketplace and omnichannel.</span></div>
+              <div><b>Scan first, never type.</b><span>Associates scan the pallet, then the location, instead of entering codes by hand. I chose accuracy over raw speed, which also removed mis-putaways.</span></div>
+            </div>
+          </div>
+          <div class="block">
+            <h4>What I owned, in order</h4>
+            <ol class="life">
+              <li>Phased rollout roadmap per business model</li>
+              <li>Detailed PRDs</li>
+              <li>OKRs, with a north star of operational efficiency</li>
+              <li>Rollout management</li>
+              <li>Post-production feedback loop and support</li>
+            </ol>
+          </div>
+          <div class="block">
+            <h4>Program team I led</h4>
+            <div class="team"><span><b>2</b> Product Managers</span><span><b>2</b> UX designers</span><span><b>3</b> Backend engineers</span><span><b>2</b> Frontend engineers</span></div>
+            <p style="font-size:14.5px;color:var(--muted)">I also aligned dependent teams on a common timeline and ran stakeholder communications and reporting.</p>
+          </div>
+        </div>
+        <aside class="rail" aria-label="Results">
+          <div class="result"><strong>−42%</strong><span>dock-to-stock time per pallet in dark stores (60 → 34 min)</span></div>
+          <div class="result"><strong>+12%</strong><span>outbound SLA in dark stores</span></div>
+          <div class="result"><strong>−32%</strong><span>dock-to-stock time in marketplace and omnichannel, with outbound SLA +4%</span></div>
+          <div class="result"><strong>96%</strong><span>of operational workflows now run on mobile</span></div>
+          <p class="note">Efficiency is measured as dock-to-stock time per pallet with the same number of associates. 12 dark stores went live in April 2026; 16 use the app today.</p>
+        </aside>
+      </div>
+      <div class="gallery" aria-label="Putaway flow mockups">
+        <p class="label">Putaway flow · mockup</p>
+        <div class="gallery-row">
+          <div class="phone"><div class="scr">
+            <div class="sbar"><span>Blibli</span><i>▾◢▮ 12:30</i></div>
+            <div class="abar"><span class="ham"></span><b>Putaway</b><span class="avail">Available</span></div>
+            <div class="body">
+              <div class="info">3 pallets waiting at the dock.</div>
+              <div class="mcard or"><div class="mh">LPN-0004821 <span class="pillx or">Dock 3</span></div><div class="mrow"><span>SKUs</span><span>24</span></div><div class="mrow"><span>Received</span><span>12:02</span></div></div>
+              <div class="mcard"><div class="mh">LPN-0004822 <span class="pillx">Dock 3</span></div><div class="mrow"><span>SKUs</span><span>18</span></div><div class="mrow"><span>Received</span><span>12:09</span></div></div>
+              <div class="mcard"><div class="mh">LPN-0004825 <span class="pillx">Dock 1</span></div><div class="mrow"><span>SKUs</span><span>31</span></div><div class="mrow"><span>Received</span><span>12:15</span></div></div>
+            </div>
+            <div class="foot"><div class="pbtn">Start putaway</div></div>
+          </div></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="phone"><div class="scr">
+            <div class="sbar"><span>Blibli</span><i>▾◢▮ 12:31</i></div>
+            <div class="abar"><span class="ham"></span><b>Putaway</b><span class="avail">Available</span></div>
+            <div class="body">
+              <div class="info">Scan the pallet, then the shelf.</div>
+              <div class="mcard gr"><div class="mh">Pallet LPN-0004821 <span class="ck on"></span></div><div class="scanb">Scanned</div></div>
+              <div class="mcard"><div class="mh">Suggested location</div><div class="loc">A-03-02-B</div><div class="mrow"><span>Zone</span><span>Fast movers</span></div><div class="scanb">Scan location</div></div>
+            </div>
+            <div class="foot"><div class="pbtn off">Confirm putaway</div></div>
+          </div></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="phone"><div class="scr">
+            <div class="sbar"><span>Blibli</span><i>▾◢▮ 12:34</i></div>
+            <div class="abar"><span class="ham"></span><b>Putaway</b><span class="avail">Available</span></div>
+            <div class="body">
+              <div class="done"><div class="tick">✓</div><b style="font-size:13px">Putaway complete</b><span style="color:var(--b-sub)">LPN-0004821 → A-03-02-B</span></div>
+              <div class="mcard gr"><div class="mrow"><span>Dock to stock</span><span><b>33 min</b></span></div><div class="mrow"><span>Target</span><span>35 min</span></div></div>
+            </div>
+            <div class="foot"><div class="pbtn">Next pallet</div></div>
+          </div></div>
+        </div>
+        <p class="cap">Mockup with sample data, based on the live app's design. Associates scan the pallet and the shelf; the app suggests the location and tracks dock-to-stock time.</p>
+      </div>
+    </article>
+
+    <!-- GROCERY -->
+    <article class="case flagship" id="grocery" aria-labelledby="c-gro">
+      <div class="case-top">
+        <div class="meta"><span class="flag">Flagship</span><span class="tag sc">Blibli</span><span class="tag sc">Grocery and fresh</span><span class="status live">Live since April 2026</span><span class="when-chip">Started Oct 2025</span></div>
+        <h3 id="c-gro">Grocery and fresh products in the WMS and mobility apps</h3>
+        <p class="tldr"><b>In short</b>Led a 15-person team to add perishables support to the WMS and mobile apps, which won a grocery client with a USD 4M+ annual contract. Live since April 2026 across 16 dark stores; on-time handover to logistics rose from 87% to 96%.</p>
+        <div class="scale"><span>Coverage: <b>Jabodetabek</b> (Greater Jakarta)</span><span><b>35,000</b> transactions a day</span><span>Up to <b>60,000</b> a day in sales</span><span><b>16</b> dark stores</span></div>
+      </div>
+      <div class="case-body">
+        <div class="case-main">
+          <div class="block">
+            <h4>Capabilities along the warehouse flow</h4>
+            <div class="wflow">
+              <div><b>Inbound</b><ul><li>Item-level attributes</li><li>LPN management</li></ul></div>
+              <div><b>Storage</b><ul><li>Chamber-based putaway</li><li>Spare management</li></ul></div>
+              <div><b>Stock control</b><ul><li>MD preference rules</li><li>Automatic flushing by expiry date</li></ul></div>
+              <div><b>Outbound</b><ul><li>Picking</li><li>Outbound staging</li><li>Handover</li></ul></div>
+            </div>
+          </div>
+          <div class="block">
+            <h4>What I owned</h4>
+            <ul>
+              <li>Phased rollout roadmap, detailed PRDs and OKRs, with a north star of revenue from warehouse management.</li>
+              <li>Rollout, a post-production feedback loop, cross-team timeline alignment, stakeholder communications and reporting.</li>
+            </ul>
+          </div>
+          <div class="block">
+            <h4>Key decisions</h4>
+            <div class="decide">
+              <div><b>Extend the existing WMS rather than buy a grocery system.</b><span>A longer build, but one platform for associates to learn and one that can serve the next grocery client.</span></div>
+              <div><b>Ship what the client needs on day one.</b><span>Expiry, chamber putaway and LPN management went live first; dashboard optimization moved to phase 2 so we hit the client's launch date.</span></div>
+            </div>
+          </div>
+          <div class="block">
+            <h4>Program team I led</h4>
+            <div class="team"><span><b>2</b> Product Managers</span><span><b>2</b> UX designers</span><span><b>8</b> Backend engineers</span><span><b>3</b> Frontend engineers</span></div>
+          </div>
+        </div>
+        <aside class="rail" aria-label="Results">
+          <div class="result"><strong>USD 4M+</strong><span>annual contract value (~72B IDR), subject to contract terms</span></div>
+          <div class="result"><strong>87% → 96%</strong><span>on-time handover to logistics, cutting courier waiting time</span></div>
+          <div class="result"><strong>35,000</strong><span>transactions a day on average, peaking at 60,000 in sale periods</span></div>
+          <div class="result"><strong>16</strong><span>dark stores across Jabodetabek</span></div>
+        </aside>
+      </div>
+      <div class="gallery" aria-label="Grocery flow mockups">
+        <p class="label">Fresh inbound, chamber putaway and expiry flushing · mockup</p>
+        <div class="gallery-row">
+          <div class="phone"><div class="scr">
+            <div class="sbar"><span>Blibli</span><i>▾◢▮ 07:10</i></div>
+            <div class="abar"><span class="ham"></span><b>Inbound</b><span class="avail">Available</span></div>
+            <div class="body">
+              <div class="info">Capture item details for fresh goods.</div>
+              <div class="mcard or"><div class="mh">Greek yoghurt 500 g</div>
+                <div class="field"><label>Expiry date</label><div>14 Nov 2026</div></div>
+                <div class="field"><label>Batch</label><div>YG-26-1102</div></div>
+                <div class="field"><label>Storage chamber</label><div>Chiller</div></div>
+                <div class="field"><label>Quantity</label><div>48</div></div>
+              </div>
+            </div>
+            <div class="foot"><div class="pbtn">Save and print LPN</div></div>
+          </div></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="phone"><div class="scr">
+            <div class="sbar"><span>Blibli</span><i>▾◢▮ 07:14</i></div>
+            <div class="abar"><span class="ham"></span><b>Putaway</b><span class="avail">Available</span></div>
+            <div class="body">
+              <div class="info">Put this LPN in the chiller chamber.</div>
+              <div class="mcard"><div class="mh">LPN-0019044 <span class="pillx">Chiller</span></div><div class="mrow"><span>Item</span><span>Greek yoghurt 500 g</span></div><div class="mrow"><span>Expires</span><span>14 Nov 2026</span></div></div>
+              <div class="mcard"><div class="mh">Chamber location</div><div class="loc">CH-02-A-04</div><div class="scanb">Scan location</div></div>
+              <div class="info warn">Frozen and ambient bins are blocked for this item.</div>
+            </div>
+            <div class="foot"><div class="pbtn off">Confirm putaway</div></div>
+          </div></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="phone"><div class="scr">
+            <div class="sbar"><span>Blibli</span><i>▾◢▮ 22:00</i></div>
+            <div class="abar"><span class="ham"></span><b>Expiry flush</b><span class="avail">Available</span></div>
+            <div class="body">
+              <div class="info warn">3 items reach expiry tonight.</div>
+              <div class="mcard rd"><div class="mh">Fresh milk 1 L <span class="pillx rd">Today</span></div><div class="mrow"><span>Location</span><span>CH-01-B-02</span></div><div class="mrow"><span>Qty</span><span>12</span></div></div>
+              <div class="mcard rd"><div class="mh">Spinach 250 g <span class="pillx rd">Today</span></div><div class="mrow"><span>Location</span><span>CH-03-A-01</span></div><div class="mrow"><span>Qty</span><span>9</span></div></div>
+              <div class="mcard or"><div class="mh">Tofu 300 g <span class="pillx or">Today</span></div><div class="mrow"><span>Location</span><span>CH-02-C-05</span></div><div class="mrow"><span>Qty</span><span>6</span></div></div>
+            </div>
+            <div class="foot"><div class="pbtn">Flush 27 units</div></div>
+          </div></div>
+        </div>
+        <p class="cap">Mockup with sample data. The system blocks the wrong chamber at putaway and pulls stock off sale automatically when it reaches its expiry date.</p>
+      </div>
+    </article>
+
+    <!-- REPLENISHMENT -->
+    <article class="case" id="replenishment" aria-labelledby="c-rep">
+      <div class="case-top">
+        <div class="meta"><span class="tag sc">Blibli</span><span class="tag sc">Forecasting</span><span class="tag ai">Also AI</span><span class="status live">Live</span><span class="when-chip">Apr 2026 – launched Jun 2026</span></div>
+        <h3 id="c-rep">Forecast-driven auto-replenishment</h3>
+        <p class="tldr"><b>In short</b>With Data Science, built SKU-level demand forecasting that moves stock to the pick face before orders arrive, with a person approving each move. Out-of-stocks on searched products fell 24% and outbound SLA rose from 93.6% to 97.2%.</p>
+        <div class="scale"><span><b>20,000+</b> active SKUs</span><span><b>8</b> warehouses</span></div>
+      </div>
+      <div class="case-body">
+        <div class="case-main">
+          <div class="block">
+            <h4>What I built</h4>
+            <ul>
+              <li>A demand forecast per SKU per warehouse from sales history, seasonality, promotions, festive periods and new launches.</li>
+              <li>Three automated triggers: replenishment requests to inventory planning, directed putaway at inbound (pick face or bulk face) and bulk-to-pick-face moves.</li>
+              <li>Decision dashboards from the demand planning and inventory optimization models across 14 warehouses.</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="rail" aria-label="Results">
+          <div class="result"><strong>−24%</strong><span>out-of-stocks on customer-searched SKUs</span></div>
+          <div class="result"><strong>93.6% → 97.2%</strong><span>outbound SLA (+3.6 points)</span></div>
+          <div class="guard"><h4 class="label">Guardrails</h4><ul><li>System recommends, a person approves</li><li>Rejected suggestions feed back to the model</li></ul></div>
+        </aside>
+      </div>
+      <div class="gallery" aria-label="Replenishment mockups">
+        <p class="label">Supervisor approval and the associate's task · mockup</p>
+        <div class="gallery-row">
+          <div class="web"><div class="wbar"><span class="logo">Blibli</span><b>WMS · Replenishment suggestions</b><span class="avail">WH-JKT-02</span></div>
+            <div class="wbody">
+              <div class="info">Suggestions need your approval before tasks are created.</div>
+              <table class="wtable"><thead><tr><th>SKU</th><th>7-day forecast</th><th>Pick face</th><th>Move</th><th></th></tr></thead><tbody>
+                <tr><td>Instant noodles 5-pack</td><td>840</td><td>120</td><td>300</td><td><div class="act"><span class="mini-b f">Approve</span><span class="mini-b rd">Reject</span></div></td></tr>
+                <tr><td>Cooking oil 2 L</td><td>310</td><td>45</td><td>120</td><td><div class="act"><span class="mini-b f">Approve</span><span class="mini-b rd">Reject</span></div></td></tr>
+                <tr><td>Phone charger 20 W</td><td>96</td><td>30</td><td>40</td><td><div class="act"><span class="mini-b f">Approve</span><span class="mini-b rd">Reject</span></div></td></tr>
+              </tbody></table>
+              <p style="font-size:10px;color:var(--b-sub)">Rejecting asks for a reason, which is sent back to the forecasting model.</p>
+            </div></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="phone"><div class="scr">
+            <div class="sbar"><span>Blibli</span><i>▾◢▮ 05:40</i></div>
+            <div class="abar"><span class="ham"></span><b>Replenish</b><span class="avail">Available</span></div>
+            <div class="body">
+              <div class="info">Move before the 08:00 order peak.</div>
+              <div class="mcard or"><div class="mh">From bulk</div><div class="loc">B-12-04</div></div>
+              <div class="mcard gr"><div class="mh">To pick face</div><div class="loc">P-03-11</div></div>
+              <div class="mcard"><div class="mrow"><span>Item</span><span>Instant noodles 5-pack</span></div><div class="mrow"><span>Qty</span><span>300</span></div></div>
+            </div>
+            <div class="foot"><div class="pbtn">Scan bulk location</div></div>
+          </div></div>
+        </div>
+        <p class="cap">Mockup with sample data.</p>
+      </div>
+    </article>
+
+    <!-- FULFILLMENT -->
+    <article class="case" id="fulfillment" aria-labelledby="c-ful">
+      <div class="case-top">
+        <div class="meta"><span class="tag sc">Blibli</span><span class="tag sc">Flipkart</span><span class="tag sc">Fulfillment and labor</span><span class="status live">Live</span><span class="when-chip">2021 – 2025</span></div>
+        <h3 id="c-ful">Fulfillment automation, labor planning and slotting</h3>
+        <p class="tldr"><b>In short</b>Integrated conveyor-based fulfillment automation for a 5× capacity gain (2,000 → 10,000 order items an hour), and gave warehouse leads tools to plan labor, slot work and auto-assign tasks.</p>
+      </div>
+      <div class="case-body">
+        <div class="case-main">
+          <div class="block">
+            <h4>Blibli</h4>
+            <ul>
+              <li><b>Conveyor belt integration</b> (Nov 2024 – Sep 2025): 0-to-1 fulfillment automation from problem definition and PRDs to launch, owning release planning and cross-team dependencies.</li>
+              <li><b>Labor planning and task auto-assignment</b> (May – Jul 2023): tracks picker and stock-control productivity and assigns tasks to available associates.</li>
+              <li><b>Inbound calendar and wave slotting</b> (Oct – Nov 2022): dock slots for supplier deliveries and waves for outbound.</li>
+            </ul>
+          </div>
+          <div class="block">
+            <h4>Flipkart</h4>
+            <ul>
+              <li><b>Inventory placement algorithms</b> (Sep – Nov 2021), co-designed with Data Science for a WMS across 16+ facilities.</li>
+              <li><b>Self-serve inventory dashboards</b> (Oct 2021 – Feb 2022) and a <b>SOX audit compliance dashboard</b> (May – Jul 2021).</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="rail" aria-label="Results">
+          <div class="result"><strong>5×</strong><span>capacity: 2,000 → 10,000 order items an hour</span></div>
+          <div class="result"><strong>+7–11%</strong><span>SLA improvement from an 85% baseline</span></div>
+          <div class="result"><strong>8% → 3.6%</strong><span>orders stuck because the pick face was empty</span></div>
+          <div class="result"><strong>+20%</strong><span>order items picked per hour at Flipkart</span></div>
+          <p class="note">Flipkart dashboards reached 500+ active users; the SOX dashboard saved 16 hours of manual work a week.</p>
+        </aside>
+      </div>
+      <div class="gallery" aria-label="Labor planning mockups">
+        <p class="label">Labor planning and task auto-assignment · mockup</p>
+        <div class="gallery-row">
+          <div class="web"><div class="wbar"><span class="logo">Blibli</span><b>WMS · Labor planning · Today</b><span class="avail">Shift A</span></div>
+            <div class="wbody">
+              <div class="wgrid">
+                <div class="panel"><h5>Picker productivity (units/hour)</h5>
+                  <div class="hbar"><span style="text-align:left">Picker 07</span><i style="--w:92%"></i><span>138</span></div>
+                  <div class="hbar"><span style="text-align:left">Picker 02</span><i style="--w:81%"></i><span>121</span></div>
+                  <div class="hbar"><span style="text-align:left">Picker 11</span><i style="--w:66%"></i><span>99</span></div>
+                  <div class="hbar"><span style="text-align:left">Picker 04</span><i style="--w:48%"></i><span>72</span></div>
+                </div>
+                <div class="panel"><h5>Outbound waves</h5>
+                  <div class="mrow"><span>W-0214 · 09:00</span><span class="pillx gr">Done</span></div>
+                  <div class="mrow"><span>W-0215 · 10:30</span><span class="pillx">Picking</span></div>
+                  <div class="mrow"><span>W-0216 · 12:00</span><span class="pillx or">Queued</span></div>
+                  <h5 style="margin-top:6px">Inbound dock slots</h5>
+                  <div class="mrow"><span>Dock 1 · 13:00</span><span>Supplier PT-A</span></div>
+                  <div class="mrow"><span>Dock 3 · 14:30</span><span>Supplier PT-B</span></div>
+                </div>
+              </div>
+            </div></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="phone"><div class="scr">
+            <div class="sbar"><span>Blibli</span><i>▾◢▮ 10:28</i></div>
+            <div class="abar"><span class="ham"></span><b>Picking</b><span class="avail">Available</span></div>
+            <div class="body">
+              <div class="info">New task assigned to you.</div>
+              <div class="mcard or"><div class="mh">Wave W-0215 <span class="pillx">Auto-assigned</span></div><div class="mrow"><span>Items</span><span>42</span></div><div class="mrow"><span>Zone</span><span>A, B</span></div><div class="mrow"><span>Due</span><span>11:15</span></div></div>
+              <div class="mcard"><div class="mh">Empty container ready <span class="box on"></span></div></div>
+            </div>
+            <div class="foot"><div class="pbtn">Start picking</div></div>
+          </div></div>
+        </div>
+        <p class="cap">Mockup with sample data. Supervisors see productivity, waves and dock slots; the system assigns tasks to available associates.</p>
+      </div>
+    </article>
+
+    <!-- POS -->
+    <div class="mini" id="omnichannel" style="margin-bottom:16px">
+      <div class="meta"><span class="tag sc">Blibli</span><span class="tag sc">Omnichannel enablement</span><span class="status live">Live</span></div>
+      <h3>16.8B IDR a year saved in licensing costs</h3>
+      <p>Enabled omnichannel execution on Blibli's in-house platform so an internal client could run its operations on our product instead of a licensed third-party system, saving 16.8B IDR a year.</p>
+    </div>
+
+    <div class="mini" id="pos">
+      <div class="meta"><span class="tag sc">Blibli</span><span class="tag sc">Omnichannel retail</span><span class="status live">Pilot live since Aug 2025</span><span class="when-chip">May – Aug 2025</span></div>
+      <h3>Omnichannel POS for external retail clients</h3>
+      <p>Checkout, customer, inventory and transaction flows integrated with Odoo ERP and Seller Center. Split payments across cards, cash, financial services and QRIS (about 30% of historical orders); pre-order, down-payment and store pickup flows grounded in 2,305 historical orders; IMEI and serial number validation; seller-controlled pricing and merchant promotions at checkout.</p>
+      <div class="gallery-row" style="margin-top:6px">
+        <div class="web tablet"><div class="wbar"><span class="logo">Blibli</span><b>Instore POS · Checkout</b><span class="avail">Store 01</span></div>
+          <div class="wbody">
+            <div class="wgrid">
+              <div class="panel"><h5>Cart</h5>
+                <div class="mrow"><span>Smartphone X 128 GB<br><small style="color:var(--b-sub)">IMEI 35xxxxxxxx1042 ✓</small></span><span>3,799,000</span></div>
+                <div class="mrow"><span>Phone case</span><span>149,000</span></div>
+                <div class="mrow"><span>Merchant promo</span><span style="color:var(--b-green)">−150,000</span></div>
+                <div class="mrow"><span><b>Total (IDR)</b></span><span><b>3,798,000</b></span></div>
+              </div>
+              <div class="panel"><h5>Split payment</h5>
+                <div class="mrow"><span>Credit card</span><span>2,500,000</span></div>
+                <div class="mrow"><span>QRIS</span><span>1,298,000</span></div>
+                <div class="mrow"><span>Remaining</span><span style="color:var(--b-green)"><b>0</b></span></div>
+                <div class="pbtn gr" style="margin-top:4px">Complete sale</div>
+              </div>
+            </div>
+          </div></div>
+      </div>
+      <p class="cap">Mockup with sample data.</p>
+    </div>
+  </section>
+
+  <!-- ================= AI ================= -->
+  <section id="ai" aria-labelledby="ai-h">
+    <div class="sec-head">
+      <div class="track-head"><span class="bar ai"></span><span class="label">Track 2</span></div>
+      <h2 id="ai-h">Enterprise AI and Automation</h2>
+      <p>AI that takes real work off people's plates, with clear guardrails on when a person stays in charge.</p>
+    </div>
+
+    <article class="case flagship" id="incident-agent" aria-labelledby="c-inc">
+      <div class="case-top">
+        <div class="meta"><span class="flag">Flagship</span><span class="tag ai">Blibli</span><span class="tag ai">Agentic AI</span><span class="tag ai">Incident management</span><span class="status live">Live</span><span class="when-chip">Agents: Mar – May 2026 · Portal: 2024</span></div>
+        <h3 id="c-inc">AI incident agent and self-help correction portal</h3>
+        <p class="tldr"><b>In short</b>Built AI agents that classify, triage and diagnose every new Jira incident, resolving 54% without a person, plus a portal that lets warehouse teams fix data errors themselves. Incident SLA turnaround fell 44%, and production issue tickets fell from 120 to 80 a month.</p>
+        <div class="scale"><span><b>~80</b> incidents a month</span><span><b>54%</b> resolved by the agent</span><span><b>46%</b> routed to a person</span><span><b>488</b> RCAs rated in 6 months</span></div>
+      </div>
+      <div class="case-body">
+        <div class="case-main">
+          <div class="block">
+            <h4>How the agent handles a new incident</h4>
+            <ol class="flow">
+              <li>Read the ticket and comments; pull error strings and components</li>
+              <li>Classify severity: Critical, Medium or Trivial</li>
+              <li>Search a year of history, precise queries first</li>
+              <li>Rank the top 10 similar tickets with a weighted rubric</li>
+              <li>State the likely root cause, confidence and evidence</li>
+            </ol>
+            <div class="branch">
+              <div class="hi"><b>High confidence</b>Proposes a resolution</div>
+              <div><b>Low confidence</b>Auto-assigns to a person</div>
+            </div>
+          </div>
+          <div class="block">
+            <h4>Around the agent</h4>
+            <ul>
+              <li><b>Self-help correction portal</b> (Aug – Nov 2024): turns data errors into tracked correction tickets, with an owning team, role-based approvals and a full audit history. Intake from inbound inspection, stocktaking, picking, outbound QC and weight validation.</li>
+              <li><b>Incident trend dashboard</b> (Jun – Jul 2024), plus resolution updates for internal teams, leadership, clients and customers.</li>
+            </ul>
+          </div>
+          <div class="block">
+            <h4>Key decisions</h4>
+            <div class="decide">
+              <div><b>Match on evidence, not keywords.</b><span>The similarity rubric weights exact error strings (45%) and confirmed root causes (35%) far above shared words, which cut false matches.</span></div>
+              <div><b>Route low confidence to a person.</b><span>The agent only resolves when it is confident; everything else goes to an engineer. I traded some automation for trust, and 54% of incidents are still resolved automatically.</span></div>
+              <div><b>Prototype before asking for engineers.</b><span>I built the workflow in Claude Code and demoed a hosted version, so leadership saw it working before funding it.</span></div>
+            </div>
+          </div>
+        </div>
+        <aside class="rail" aria-label="Results">
+          <div class="result"><strong>−44%</strong><span>incident SLA turnaround, April to October 2026, per incident</span></div>
+          <div class="result"><strong>54%</strong><span>of ~80 monthly incidents resolved by the agent</span></div>
+          <div class="result"><strong>82%</strong><span>positive feedback across 488 rated root-cause analyses</span></div>
+          <div class="result"><strong>78%</strong><span>of severity classifications accepted unchanged</span></div>
+          <div class="result"><strong>120 → 80</strong><span>production issue tickets a month after the self-help portal</span></div>
+          <div class="guard"><h4 class="label">Guardrails</h4><ul><li>Human approval before any data correction</li><li>Low-confidence cases go to a person</li><li>Feedback on every suggested root cause</li><li>Ticket content treated as sensitive</li></ul></div>
+        </aside>
+      </div>
+      <div class="gallery" aria-label="AI incident mockups">
+        <p class="label">Agent analysis, warehouse self-help and trends · mockup</p>
+        <div class="gallery-row">
+          <div class="web"><div class="wbar"><span class="logo">Jira</span><b>INC-4821 · Weight mismatch blocks outbound handover</b></div>
+            <div class="wbody">
+              <div class="agent">
+                <div class="who">Incident agent <span class="pillx rd" style="margin-left:auto">Severity: Critical</span></div>
+                <div><b>Likely root cause:</b> SKU master weight differs from packed weight after a supplier pack-size change.</div>
+                <div style="display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;font-size:10.5px"><span>Confidence</span><div class="conf"></div><span>0.86 · stated in 3 past RCAs</span></div>
+                <table class="wtable"><thead><tr><th>Similar ticket</th><th>Score</th><th>Why</th></tr></thead><tbody>
+                  <tr><td>INC-4377</td><td>92</td><td>Same error string, same fix</td></tr>
+                  <tr><td>INC-4102</td><td>81</td><td>Same root cause, other SKU</td></tr>
+                  <tr><td>INC-3958</td><td>64</td><td>Same component</td></tr>
+                </tbody></table>
+                <div class="act"><span class="mini-b f">Apply fix · needs approval</span><span class="mini-b">Assign to on-call</span><span class="mini-b">Rate this RCA</span></div>
+              </div>
+            </div></div>
+          <div class="phone"><div class="scr">
+            <div class="sbar"><span>Blibli</span><i>▾◢▮ 15:20</i></div>
+            <div class="abar"><span class="ham"></span><b>Report SKU issue</b><span class="avail">Available</span></div>
+            <div class="body">
+              <div class="info">Found wrong item data? Report it here.</div>
+              <div class="mcard or">
+                <div class="field"><label>SKU</label><div>SKU-88213 · Rice cooker 1.8 L</div></div>
+                <div class="field"><label>Attribute</label><div>Weight</div></div>
+                <div class="field"><label>In system / Actual</label><div>1.2 kg / 2.0 kg</div></div>
+                <div class="field"><label>Found at</label><div>Outbound QC</div></div>
+              </div>
+              <div class="mcard gr"><div class="mrow"><span>Ticket</span><span>COR-1294</span></div><div class="mrow"><span>Status</span><span class="pillx">Awaiting approval</span></div></div>
+            </div>
+            <div class="foot"><div class="pbtn">Submit correction</div></div>
+          </div></div>
+          <div class="web" style="width:360px;min-width:340px"><div class="wbar"><span class="logo">Blibli</span><b>Incident trends · This month</b></div>
+            <div class="wbody">
+              <div class="panel"><h5>Top recurring issues</h5>
+                <div class="hbar"><span style="text-align:left">Weight mismatch</span><i style="--w:88%"></i><span>44</span></div>
+                <div class="hbar"><span style="text-align:left">Missing dimensions</span><i style="--w:62%"></i><span>31</span></div>
+                <div class="hbar"><span style="text-align:left">IMEI mismatch</span><i style="--w:40%"></i><span>20</span></div>
+                <div class="hbar"><span style="text-align:left">Order sync delay</span><i style="--w:24%"></i><span>12</span></div>
+              </div>
+              <div class="panel"><h5>Severity mix</h5>
+                <div class="mrow"><span><span class="pillx rd">Critical</span></span><span>9</span></div>
+                <div class="mrow"><span><span class="pillx or">Medium</span></span><span>58</span></div>
+                <div class="mrow"><span><span class="pillx">Trivial</span></span><span>40</span></div>
+              </div>
+            </div></div>
+        </div>
+        <p class="cap">Mockups with sample data and ticket numbers. They show how the agent's output, the self-help form and the trend view work, not real incidents.</p>
+      </div>
+    </article>
+
+    <article class="case" id="recs" aria-labelledby="c-rec">
+      <div class="case-top">
+        <div class="meta"><span class="tag ai">Blibli</span><span class="tag ai">Experimentation</span><span class="status live">Live</span><span class="when-chip">Feb 2026 – A/B test June 2026</span></div>
+        <h3 id="c-rec">Omnichannel recommendations for offline shoppers</h3>
+        <p class="tldr"><b>In short</b>Tested recommendations aimed at in-store shoppers. Click-through rose 9.8% (relative) and the first online orders from this group appeared, with a significant conversion result.</p>
+      </div>
+      <div class="case-body">
+        <div class="case-main">
+          <div class="block">
+            <h4>The test</h4>
+            <ul>
+              <li>About 3,500 recommendation loads, split between control and treatment.</li>
+              <li>Click-through rate rose from 20.04% to 22.00%; conversion moved from 0% to 0.33% (p = 0.015).</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="rail" aria-label="Results">
+          <div class="result"><strong>+9.8%</strong><span>relative CTR lift (+1.96 points)</span></div>
+          <div class="result"><strong>0 → 0.33%</strong><span>conversion among targeted offline customers</span></div>
+          <p class="note">Small test volume, so treat this as a signal rather than a forecast.</p>
+        </aside>
+      </div>
+    </article>
+
+    <div class="minis">
+      <div class="mini"><div class="meta"><span class="tag ai">Service automation</span><span class="status">Defined, targets set</span></div><h3>AI QA for customer service calls</h3><p>Targets for the first six months: QA coverage from 10% to 100% of calls, over 90% agreement with manual QA scores, under 10% transcription word-error rate, and feedback within 15 minutes.</p></div>
+      <div class="mini"><div class="meta"><span class="tag ai">Search</span><span class="status">Offline evaluation</span><span class="when-chip">Jun – Aug 2025</span></div><h3>Vector search evaluation</h3><p>Ran an offline relevance audit of 3,275 queries comparing lexical, hybrid and pure vector retrieval to decide how to roll out vector search.</p></div>
+      <div class="mini"><div class="meta"><span class="tag ai">AI-native work</span><span class="status live">In use</span><span class="when-chip">Mar 2026</span></div><h3>A Claude skill for PRDs</h3><p>Set the team's PRD template and built a reusable Claude skill that applies it, so every PM writes requirements to the same standard.</p></div>
+      <div class="mini"><div class="meta"><span class="tag ai">AI-native work</span></div><h3>Prototypes that win funding</h3><p>Build working prototypes in Claude Code, host them on GitHub and Render, and demo them to leadership before asking for investment.</p></div>
+    </div>
+  </section>
+
+  <!-- ================= CONSULTING ================= -->
+  <section id="consulting" aria-labelledby="kp-h">
+    <div class="sec-head">
+      <div class="track-head"><span class="bar kp"></span><span class="label">Consulting · KPMG India · 2019 – 2021</span></div>
+      <h2 id="kp-h">Technology risk and compliance consulting</h2>
+      <p>Two years advising Fortune 100 clients and government departments. It is where I learned to build controls into systems, which now shapes how I design guardrails for AI.</p>
+    </div>
+    <div class="minis">
+      <div class="mini"><div class="meta"><span class="tag kp">Compliance</span></div><h3>ISO 27001 and SOX frameworks</h3><p>Implemented control frameworks for 8 organizations, cutting compliance costs by 30% across audit effort, tool licenses and staffing.</p></div>
+      <div class="mini"><div class="meta"><span class="tag kp">Risk</span></div><h3>IT maturity and cybersecurity assessments</h3><p>Assessed 8 government departments and turned the findings into phased technology roadmaps.</p></div>
+      <div class="mini"><div class="meta"><span class="tag kp">Delivery</span></div><h3>Fortune 100 client releases</h3><p>Worked with client engineering on requirements, design reviews and release readiness, delivering with 2 or fewer high-impact UAT issues.</p></div>
+      <div class="mini"><div class="meta"><span class="tag kp">Leadership</span></div><h3>First team</h3><p>Managed and mentored a team of 3: 1 Senior Analyst and 2 Analysts.</p></div>
+    </div>
+  </section>
+
+  <!-- ================= LEADERSHIP ================= -->
+  <section aria-labelledby="lead-h">
+    <div class="sec-head">
+      <p class="label">How I lead</p>
+      <h2 id="lead-h">Direct reports and program teams</h2>
+      <p>Direct reports are people I manage. Program teams are cross-functional teams I led for a project, including engineers and designers who report elsewhere.</p>
+    </div>
+    <div class="teams-viz" role="list" aria-label="Team sizes">
+      <div class="trow" role="listitem"><div>Grocery and fresh<small>Program team</small></div><i style="--w:100%;--c:var(--sc)"></i><span>15</span></div>
+      <div class="trow" role="listitem"><div>WMS mobility<small>Program team</small></div><i style="--w:60%;--c:var(--sc)"></i><span>9</span></div>
+      <div class="trow" role="listitem"><div>Blibli product team<small>Direct reports: 2 PMs, 2 Product Analysts</small></div><i style="--w:26.7%;--c:var(--ai)"></i><span>4</span></div>
+      <div class="trow" role="listitem"><div>KPMG consulting team<small>Direct reports: 1 Senior Analyst, 2 Analysts</small></div><i style="--w:20%;--c:var(--kp)"></i><span>3</span></div>
+    </div>
+    <div class="lead">
+      <div><h3>Capacity planning</h3><p>Plan work for my 4 direct reports by priority, complexity and each person's strengths.</p></div>
+      <div><h3>Standards</h3><p>Own the team's PRD template, OKR setting and post-production feedback loops.</p></div>
+      <div><h3>Stakeholders</h3><p>Align Engineering, Data Science, Operations and Finance on one timeline, and run reporting to leadership and clients.</p></div>
+    </div>
+  </section>
+
+  <!-- ================= QUOTES ================= -->
+  <section aria-labelledby="q-h">
+    <div class="sec-head"><p class="label">Recommendations</p><h2 id="q-h">What colleagues say</h2><p>From LinkedIn recommendations by engineers I worked with at IBM.</p></div>
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>“A very quick learner, a great analyst of a situation and comes up with a solution to real world problems in a reasonably short amount of time.”</blockquote>
+        <figcaption><b>Debaditya Sarkar</b>Technical Team Lead, IBM · worked together, 2017</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“He has great coding skills which he combines with some good out-of-the-box thinking to provide solutions to client problems.”</blockquote>
+        <figcaption><b>Rahul Pal</b>Lead Software Engineer, US Bank (ex-IBM) · worked together, 2017</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience" aria-labelledby="exp-h">
+    <div class="sec-head"><p class="label">Experience</p><h2 id="exp-h">Where I have worked</h2></div>
+    <div class="roles">
+      <div class="role"><p class="when">Oct 2022 – Present</p><div><h3>Lead Product Manager</h3><p class="org">Blibli (Blibli.com) · Bengaluru</p><p class="sum">WMS and mobility, grocery and fresh, forecasting, fulfillment automation, omnichannel enablement, AI incident management and in-store POS for a $4B eCommerce retailer.</p></div></div>
+      <div class="role"><p class="when">May 2021 – Oct 2022</p><div><h3>Product Manager – Warehouse Management System</h3><p class="org">Flipkart · Bengaluru</p><p class="sum">Backlog and discovery for a WMS across 16+ facilities; placement algorithms, dashboards and compliance tooling.</p></div></div>
+      <div class="role"><p class="when">May 2019 – May 2021</p><div><h3>Product Consultant</h3><p class="org">KPMG India · Kolkata</p><p class="sum">Compliance frameworks, risk assessments and Fortune 100 release delivery.</p></div></div>
+      <div class="role"><p class="when">Aug 2014 – May 2017</p><div><h3>Software Development Engineer</h3><p class="org">IBM · Bengaluru</p><p class="sum">Built and shipped iOS applications and backend services for enterprise clients.</p></div></div>
+    </div>
+    <div class="edu">
+      <div><b>MBA</b><span>Indian Institute of Management Ranchi · 2017 – 2019</span></div>
+      <div><b>B.Tech, Computer Science</b><span>West Bengal University of Technology · 2010 – 2014</span></div>
+      <div><b>AI Strategy and Governance</b><span>University of Pennsylvania · 2026</span></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Hiring for supply chain or AI product roles? Let's talk.</h2>
+    <div class="row">
+      <span class="email" id="email">rajdip.sengupta17@iimranchi.ac.in</span>
+      <button class="btn" id="copy-btn" type="button">Copy email</button>
+      <span class="email" id="phone">+91 93040 20972</span>
+      <a class="btn primary" href="https://www.linkedin.com/in/rajdip-sengupta-a1664182" target="_blank" rel="noopener">Message on LinkedIn ↗</a>
+    </div>
+    <p id="copy-status" aria-live="polite"></p>
+  </section>
+</main>
+<footer>Rajdip Sengupta · Bengaluru, India</footer>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('copy-btn'),status=document.getElementById('copy-status'),el=document.getElementById('email');
+  function sel(){var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);status.textContent='Email selected. Press Ctrl+C or Cmd+C to copy.';}
+  btn.addEventListener('click',function(){
+    var t=el.textContent.trim();
+    try{navigator.clipboard.writeText(t).then(function(){status.textContent='Email copied.';},sel);}catch(e){sel();}
+  });
+})();
+</script>
+<button class="chat-fab" id="chat-open" type="button" aria-haspopup="dialog" aria-controls="chat" aria-expanded="false" aria-label="Ask about my work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 10.5h7M8.5 13.5h4.5"/></svg><span class="lbl">Ask about my work</span></button>
+<div class="chat-scrim" id="chat-scrim" hidden></div>
+<section class="chat" id="chat" role="dialog" aria-modal="false" aria-labelledby="chat-title" hidden>
+  <div class="chat-head">
+    <img id="chat-avatar" alt="" width="28" height="28">
+    <div><b id="chat-title">Ask about Rajdip's work</b><span>Answers come from this portfolio</span></div>
+    <button class="chat-x" id="chat-close" type="button" aria-label="Minimize chat" title="Minimize (Esc)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+  </div>
+  <div class="chat-log" id="chat-log" aria-live="polite"></div>
+  <div class="chips" id="chat-chips" aria-label="Suggested questions"></div>
+  <form class="chat-form" id="chat-form" autocomplete="off">
+    <label for="chat-input" class="skip">Your question</label>
+    <input id="chat-input" type="text" placeholder="Ask about projects, results, teams…" maxlength="200">
+    <button type="submit" id="chat-send" aria-label="Send" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </form>
+</section>
+
+<script>
+(function(){
+  var KB=[
+   {id:'about',k:['who is','who are you','yourself','introduce','summary','overview','background','profile','rajdip'],
+    a:'Rajdip is a Senior Product Manager in Bengaluru with 10+ years across product management, technology consulting and software engineering. He leads supply chain and warehouse platforms at Blibli (and earlier Flipkart), and builds AI agents for incident management. See the <a href="#flag-h">flagship projects</a>.',
+    f:['flagship','years','contact']},
+   {id:'years',k:['years','how long','how many years','years of experience','total experience','product management experience','pm experience','seniority','career'],
+    a:'10+ years in total: software engineer at IBM (2014–2017), MBA at IIM Ranchi (2017–2019), Product Consultant at KPMG (2019–2021), Product Manager at Flipkart (2021–2022) and Lead Product Manager at Blibli since October 2022.',
+    f:['current','team','education']},
+   {id:'current',k:['current','currently','now','blibli','present role','today','lead pm','job','role'],
+    a:'He is Lead Product Manager at Blibli (Bengaluru), a leading Indonesian eCommerce and omnichannel retailer. He owns WMS and mobility, grocery and fresh, forecasting, fulfillment automation, omnichannel enablement, AI incident management and in-store POS, with 4 direct reports and program teams of up to 15.',
+    f:['mobility','grocery','incident']},
+   {id:'flagship',k:['flagship','best','biggest','proudest','top project','achievement','achievements','impact','highlight','most important','key projects','projects'],
+    a:'His three flagship projects:<ul><li><a href="#mobility">WMS mobility</a>: dock-to-stock time down 42% in dark stores.</li><li><a href="#grocery">Grocery and fresh</a>: a USD 4M+ annual contract, live since April 2026.</li><li><a href="#incident-agent">AI incident agent</a>: incident SLA turnaround down 44%, with 54% of incidents resolved by the agent.</li></ul>',
+    f:['mobility','grocery','incident']},
+   {id:'mobility',k:['mobility','mobile app','wms app','handheld','app','dock to stock','dock-to-stock','putaway','scan','adoption','business models'],
+    a:'He led a 9-person team (started Aug 2025, launched Jan 2026) to move inbound, stock control and outbound onto one WMS mobile app across dark stores, marketplace and omnichannel. In dark stores, dock-to-stock per pallet fell 42% (60 to 34 minutes) and outbound SLA rose 12% with the same headcount; marketplace and omnichannel saw a 32% drop. About 300 users on 100 devices, with 96% of workflows on mobile. <a href="#mobility">Read the case study</a>.',
+    f:['darkstores','decisions','grocery']},
+   {id:'darkstores',k:['dark store','darkstore','dark stores','darkstores','quick commerce','q-commerce','qcommerce','instant delivery','jabodetabek','jakarta'],
+    a:'Dark stores are where his biggest gains came from. The mobility app cut dock-to-stock time 42% and lifted outbound SLA 12% across 16 dark stores. His grocery program runs in the same 16 dark stores across Greater Jakarta, handling 35,000 transactions a day and up to 60,000 in sale periods.',
+    f:['mobility','grocery','lastmile']},
+   {id:'grocery',k:['grocery','fresh','perishable','perishables','expiry','fefo','chamber','chiller','lpn','client','contract','4m','revenue','usd'],
+    a:'He led a 15-person team (Oct 2025, live April 2026) to add grocery and fresh support to the WMS and mobile apps: item attributes, LPN management, chamber-based putaway, picking, staging, handover and automatic flushing by expiry date. It won a grocery client with a USD 4M+ annual contract, and on-time handover to logistics rose from 87% to 96%. <a href="#grocery">Read the case study</a>.',
+    f:['darkstores','decisions','lastmile']},
+   {id:'lastmile',k:['last mile','last-mile','delivery','rider','riders','courier','handover','logistics','on-time','on time'],
+    a:'His work reaches up to the handover to last-mile delivery: in the grocery program, on-time handover to logistics rose from 87% to 96%, cutting courier waiting time. He has not owned rider routing or delivery apps directly.',
+    f:['grocery','fulfillment']},
+   {id:'incident',k:['incident','incidents','jira','agent','agents','triage','root cause','rca','ticket','tickets','sla turnaround','agentic','ai agent'],
+    a:'He built agentic AI workflows (Mar–May 2026) that read every new Jira incident, classify severity, rank similar past tickets with a weighted rubric and suggest the likely root cause with a confidence level. Incident SLA turnaround fell 44%, the agent resolves 54% of about 80 incidents a month, and its root-cause analyses got 82% positive feedback across 488 ratings. <a href="#incident-agent">Read the case study</a>.',
+    f:['guardrails','severity','portal']},
+   {id:'severity',k:['severity','classify','classification','critical','priority'],
+    a:'An AI agent classifies each incident as Critical, Medium or Trivial from its description and historical tickets. 78% of its classifications are accepted without any change.',
+    f:['incident','guardrails']},
+   {id:'portal',k:['self-help','self help','portal','correction','data error','data errors','sku attribute','production issue','production tickets'],
+    a:'The self-help correction portal (Aug–Nov 2024) lets warehouse teams flag and fix SKU data errors through tracked tickets with role-based approvals and full audit history. Production issue tickets fell from 120 to 80 a month.',
+    f:['incident','guardrails']},
+   {id:'guardrails',k:['guardrail','guardrails','responsible','human in the loop','human-in-the-loop','safety','safe','governance','trust','hallucination','approval','risk'],
+    a:'Every AI system he ships keeps a person in charge where it matters: low-confidence incidents go to an engineer, every data correction needs approval, replenishment suggestions need sign-off, and feedback flows back to the model. He holds a 2026 certification in AI Strategy and Governance from the University of Pennsylvania.',
+    f:['incident','replenishment','education']},
+   {id:'ai',k:['ai experience','artificial intelligence','machine learning','ml','llm','genai','generative','claude','ai','data science'],
+    a:'His AI work includes the <a href="#incident-agent">AI incident agent</a> (44% faster SLA turnaround), <a href="#replenishment">ML demand forecasting</a> with Data Science (24% fewer out-of-stocks), an A/B-tested recommendation product, a vector search evaluation, AI QA for service calls, and a Claude skill his team uses to write PRDs. He prototypes in Claude Code.',
+    f:['incident','guardrails','recs']},
+   {id:'supplychain',k:['supply chain','warehouse','warehouses','wms','operations','inventory','scm'],
+    a:'Supply chain is his core track: WMS mobility, grocery and fresh, demand forecasting and replenishment, conveyor-based fulfillment automation, labor planning and slotting at Blibli, plus WMS work at Flipkart. See <a href="#supply-chain">Supply Chain and Operations</a>.',
+    f:['mobility','replenishment','fulfillment']},
+   {id:'replenishment',k:['replenishment','replenish','forecast','forecasting','demand','out of stock','out-of-stock','stockout','stockouts','oos','pick face','pickface'],
+    a:'With Data Science, he built SKU-level demand forecasting (Apr–Jun 2026) that triggers replenishment, directed putaway and bulk-to-pick-face moves across 8 warehouses and 20,000+ SKUs, with a person approving each move. Out-of-stocks on searched SKUs fell 24% and outbound SLA rose from 93.6% to 97.2%. <a href="#replenishment">Read more</a>.',
+    f:['guardrails','fulfillment']},
+   {id:'fulfillment',k:['fulfillment','fulfilment','conveyor','automation','throughput','capacity','stuck orders','stuck','sla'],
+    a:'He delivered conveyor belt integration (Nov 2024 – Sep 2025) that raised capacity 5×, from 2,000 to 10,000 order items an hour, and improved SLA 7–11% from an 85% baseline. Orders stuck because the pick face was empty fell from 8% to 3.6%. <a href="#fulfillment">Read more</a>.',
+    f:['labor','replenishment']},
+   {id:'labor',k:['labor','labour','workforce','productivity','task assignment','auto-assignment','slotting','wave','dock slot','picker','pickers'],
+    a:'He built labor planning that tracks picker and stock-control productivity with task auto-assignment (2023), plus inbound calendar slotting for supplier deliveries and outbound wave slotting (2022).',
+    f:['fulfillment','mobility']},
+   {id:'omni',k:['omnichannel','omni-channel','licensing','licence','license','savings','cost saving','16.8','idr'],
+    a:'Through omnichannel enablement, an internal client moved onto Blibli\'s in-house platform instead of a licensed third-party system, saving 16.8B IDR a year in licensing costs.',
+    f:['pos','recs']},
+   {id:'pos',k:['pos','point of sale','checkout','store','in-store','retail','split payment','qris','odoo','erp','payments'],
+    a:'He defined an omnichannel POS for external retail clients, integrated with Odoo ERP and Seller Center, with split payments (cards, cash, financial services, QRIS), pre-order and store pickup flows, and IMEI validation. The pilot has been live since August 2025.',
+    f:['omni']},
+   {id:'recs',k:['recommendation','recommendations','a/b','ab test','experiment','experiments','experimentation','ctr','conversion','personalization'],
+    a:'He A/B tested omnichannel recommendations for in-store shoppers in June 2026: click-through rose from 20.04% to 22.00% (+9.8% relative) and conversion from 0% to 0.33% (p = 0.015), on about 3,500 loads.',
+    f:['ai','search']},
+   {id:'search',k:['vector','search','retrieval','hybrid','lexical','relevance'],
+    a:'He ran an offline relevance audit of 3,275 queries (Jun–Aug 2025) comparing lexical, hybrid and pure vector retrieval to decide how to roll out vector search.',
+    f:['recs','ai']},
+   {id:'csqa',k:['customer service','calls','qa','quality','support','speech','transcription'],
+    a:'He defined AI-based QA for customer service calls, with six-month targets of QA coverage from 10% to 100%, over 90% agreement with manual QA and under 10% transcription error. These are targets, not yet results.',
+    f:['ai']},
+   {id:'flipkart',k:['flipkart','picking efficiency','placement'],
+    a:'At Flipkart (May 2021 – Oct 2022) he was Product Manager for the Warehouse Management System across 16+ facilities: placement algorithms with Data Science raised order items picked per hour by 20%, self-serve dashboards reached 500+ active users, and a SOX dashboard saved 16 hours a week.',
+    f:['supplychain','kpmg']},
+   {id:'kpmg',k:['kpmg','consulting','consultant','compliance','sox','iso','audit','cybersecurity','government'],
+    a:'At KPMG (2019–2021) he was a Product Consultant: he implemented ISO 27001 and SOX frameworks for 8 organizations (30% lower compliance cost), assessed 8 government departments, and managed a team of 3. <a href="#consulting">See consulting</a>.',
+    f:['ibm','team']},
+   {id:'ibm',k:['ibm','engineer','engineering','developer','coding','code','technical','tech background','ios'],
+    a:'He started as a Software Development Engineer at IBM (2014–2017), building iOS apps and backend services. That background helps him work closely with engineers on architecture, constraints and trade-offs.',
+    f:['tools','kpmg']},
+   {id:'team',k:['team','teams','lead','leadership','manage','manager','direct reports','mentor','people','reports','program team'],
+    a:'He has 4 direct reports at Blibli (2 Product Managers and 2 Product Analysts) and plans their capacity by priority, complexity and strengths. He has led program teams of 9 (mobility) and 15 (grocery) including UX and engineering, and managed a team of 3 at KPMG.',
+    f:['stakeholders','decisions']},
+   {id:'stakeholders',k:['stakeholder','stakeholders','communication','communicate','presentation','influence','executive','alignment'],
+    a:'He aligns Engineering, Data Science, Operations and Finance on one timeline, runs reporting to leadership and clients, and owns incident communications for internal teams, clients and customers. He uses working prototypes to win executive funding.',
+    f:['team','decisions']},
+   {id:'decisions',k:['decision','decisions','trade-off','tradeoff','tradeoffs','trade off','approach','product thinking','judgment','judgement'],
+    a:'A few decisions he made:<ul><li>Mobility: launched in dark stores first, and used scan-first workflows for accuracy.</li><li>Grocery: extended the existing WMS instead of buying a system, and shipped day-one features first.</li><li>AI agent: matched on error strings and root causes, not keywords, and routed low-confidence cases to people.</li></ul>',
+    f:['mobility','grocery','incident']},
+   {id:'tools',k:['tools','skills','sql','jira','confluence','claude code','github','stack','data analysis','analytics'],
+    a:'Tools and skills: SQL and data analysis, dashboards and KPIs, Jira and Confluence, Claude Code and Claude skills for prototyping and PRDs, and GitHub. He works in Agile/Scrum and writes PRDs with OKRs and north star metrics.',
+    f:['ai','ibm']},
+   {id:'education',k:['education','mba','iim','degree','b.tech','btech','college','university','certification','certified','upenn','pennsylvania','studied'],
+    a:'MBA from IIM Ranchi (2017–2019), B.Tech in Computer Science from West Bengal University of Technology (2010–2014), and a 2026 certification in AI Strategy and Governance from the University of Pennsylvania.',
+    f:['years','ai']},
+   {id:'contact',k:['contact','email','phone','number','reach','hire','hiring','available','availability','interview','connect','linkedin','open to','looking for','location','relocate','where','based'],
+    a:'He is open to Senior and Lead Product Manager roles in supply chain and enterprise AI, based in Bengaluru. Email rajdip.sengupta17@iimranchi.ac.in, call +91 93040 20972, or message him on <a href="https://www.linkedin.com/in/rajdip-sengupta-a1664182" target="_blank" rel="noopener">LinkedIn</a>.',
+    f:['resume','flagship']},
+   {id:'resume',k:['resume','cv','download','pdf'],
+    a:'Two resumes are linked at the top of the page: <a href="Rajdip_Sengupta_Resume_Supply_Chain.pdf" target="_blank" rel="noopener">Supply chain</a> and <a href="Rajdip_Sengupta_Resume_AI_Automation.pdf" target="_blank" rel="noopener">AI and automation</a>.',
+    f:['contact']},
+   {id:'finance',k:['finance','financial','cost','costs','order-to-cash','order to cash','reconciliation','supplier','suppliers','vendor'],
+    a:'Finance and supplier-related work: 16.8B IDR a year saved in licensing costs through omnichannel enablement, payment reconciliation and split payments in the POS, supplier delivery slotting in the WMS, a SOX audit dashboard at Flipkart, and ISO 27001 and SOX frameworks at KPMG that cut compliance costs 30%.',
+    f:['omni','kpmg','pos']},
+   {id:'why',k:['why should','why hire','why you','strength','strengths','stand out','unique','good fit','fit for','what makes'],
+    a:'Three things stand out: he ships operations products with measured results (42% faster dock-to-stock in dark stores, 5× fulfillment capacity, a USD 4M+ client win); he builds AI that people trust, with human approval built in (44% faster incident turnaround); and he combines an engineering background with team leadership (4 direct reports, program teams of up to 15).',
+    f:['flagship','decisions','contact']},
+   {id:'private',k:['salary','ctc','compensation','notice period','notice','expected','pay','package'],
+    a:'That is best discussed directly. Please email rajdip.sengupta17@iimranchi.ac.in or message him on LinkedIn.',
+    f:['contact']}
+  ];
+  var LABEL={about:'Who is Rajdip?',years:'How many years of experience?',current:'What does he do now?',flagship:'What are his biggest projects?',mobility:'Tell me about the WMS mobile app',darkstores:'Dark store and quick commerce experience?',grocery:'What was the grocery project?',lastmile:'Any last-mile experience?',incident:'How does the AI incident agent work?',severity:'How is severity classified?',portal:'What is the self-help portal?',guardrails:'How does he keep AI safe?',ai:'What AI work has he done?',supplychain:'Supply chain experience?',replenishment:'How does replenishment work?',fulfillment:'What about fulfillment automation?',labor:'Labor planning and slotting?',omni:'What saved 16.8B IDR?',pos:'Tell me about the POS',recs:'Any A/B testing?',search:'Vector search work?',csqa:'Customer service AI?',flipkart:'What did he do at Flipkart?',kpmg:'What did he do at KPMG?',ibm:'Is he technical?',team:'How big are his teams?',stakeholders:'How does he work with stakeholders?',decisions:'What trade-offs has he made?',tools:'What tools does he use?',education:'Education and certifications?',contact:'How can I contact him?',resume:'Where is his resume?',why:'Why should we hire him?',finance:'Any finance or supplier work?',private:'Salary and notice period?'};
+  var byId={};KB.forEach(function(e){byId[e.id]=e;});
+  function norm(s){return ' '+s.toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9.%\-\/ ]+/g,' ').replace(/\s+/g,' ').trim()+' ';}
+  function score(q,e){var s=0;e.k.forEach(function(k){if(k.indexOf(' ')>-1){if(q.indexOf(' '+k+' ')>-1)s+=3;}else if(q.indexOf(' '+k+' ')>-1||q.indexOf(' '+k+'s ')>-1){s+=2;}else if(k.length>4&&q.indexOf(k)>-1){s+=1;}});return s;}
+  function answer(text){
+    var q=norm(text);
+    if(/^ (hi|hello|hey|hii|good (morning|afternoon|evening)) /.test(q)&&q.length<24) return {a:'Hi! Ask me anything about Rajdip\'s experience: projects, results, teams or how to contact him.',f:['flagship','years','contact']};
+    if(/ (thanks|thank you|thx) /.test(q)&&q.length<30) return {a:'Glad to help. Anything else you would like to know?',f:['decisions','contact']};
+    var best=null,bs=0,second=null,ss=0;
+    KB.forEach(function(e){var s=score(q,e);if(s>bs){second=best;ss=bs;best=e;bs=s;}else if(s>ss){second=e;ss=s;}});
+    if(!best||bs<2) return {a:'I am not sure about that one. I can answer questions about his projects, results, teams, tools and background. For anything else, email <b>rajdip.sengupta17@iimranchi.ac.in</b>.',f:['flagship','ai','supplychain','contact']};
+    var f=best.f.slice(); if(second&&ss>=2&&f.indexOf(second.id)<0) f.unshift(second.id);
+    return {a:best.a,f:f.slice(0,3)};
+  }
+  window.__portfolioBot=answer;
+  var open=document.getElementById('chat-open'),box=document.getElementById('chat'),scrim=document.getElementById('chat-scrim'),close=document.getElementById('chat-close'),log=document.getElementById('chat-log'),chipBox=document.getElementById('chat-chips'),form=document.getElementById('chat-form'),input=document.getElementById('chat-input'),send=document.getElementById('chat-send'),av=document.getElementById('chat-avatar');
+  if(!open)return;
+  var hp=document.querySelector('.hero-photo img'); if(hp) av.src=hp.src; else av.hidden=true;
+  var mobile=window.matchMedia('(max-width:600px)');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function add(html,who){var d=document.createElement('div');d.className='msg '+who;if(who==='me')d.textContent=html;else d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+  function chips(ids){chipBox.innerHTML='';ids.forEach(function(id){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=LABEL[id]||id;b.addEventListener('click',function(){ask(LABEL[id],id);});chipBox.appendChild(b);});chipBox.scrollLeft=0;}
+  function ask(text,id){add(text,'me');var r=id&&byId[id]?{a:byId[id].a,f:byId[id].f}:answer(text);var t=document.createElement('div');t.className='msg bot typing';t.innerHTML='<i></i><i></i><i></i>';t.setAttribute('aria-label','Typing');log.appendChild(t);log.scrollTop=log.scrollHeight;setTimeout(function(){t.remove();add(r.a,'bot');chips(r.f);},reduce?0:350);}
+  var started=false;
+  function show(){box.hidden=false;open.hidden=true;open.setAttribute('aria-expanded','true');if(mobile.matches)scrim.hidden=false;if(!started){started=true;add('Hi! I can answer questions about Rajdip\'s projects, results and experience. Pick a suggestion below or type your own.','bot');chips(['flagship','darkstores','incident','why','contact']);}if(!mobile.matches)setTimeout(function(){input.focus();},60);}
+  function hide(){box.hidden=true;scrim.hidden=true;open.hidden=false;open.setAttribute('aria-expanded','false');open.focus({preventScroll:true});}
+  open.addEventListener('click',show);
+  close.addEventListener('click',function(e){e.preventDefault();hide();});
+  scrim.addEventListener('click',hide);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!box.hidden)hide();});
+  input.addEventListener('input',function(){send.disabled=!input.value.trim();});
+  form.addEventListener('submit',function(e){e.preventDefault();var t=input.value.trim();if(!t)return;input.value='';send.disabled=true;ask(t);});
+  log.addEventListener('click',function(e){var a=e.target.closest('a');if(a&&(a.getAttribute('href')||'').charAt(0)==='#'&&mobile.matches)hide();});
+  // Shrink the button to an icon once the reader is past the hero, so it never covers content
+  var hero=document.getElementById('top');
+  function onScroll(){var past=hero?hero.getBoundingClientRect().bottom<0:window.scrollY>400;open.classList.toggle('compact',past);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+</script>
+
+</body>
+</html>
